@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+:root{
+    --color-1:#001542;
+    --color-2:#085454;
+    --color-3:#7a7a7a;
+    --color-4:#ffffff;
+    --color-5:#ffb30d;
+    --color-6:#7a7a7a69;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f6fa;
+    font-family: 'Roboto',sans-serif;
+}
+.navbar{
+    position: sticky;
+    width: 100%;
+    background-color:var(--color-2);
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+    line-height: 50px;
+}
+.navbar-banner{
+    color: var(--color-4);
+    font-size: 18px;
+    
+    cursor: pointer;
+}
+.nav-cart{
+    color: var(--color-4);
+    width: 40px;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    font-size: 25px;
+    /* parent of cart-items.
+    so,position relative kuduthathala
+     cart items athukulla mattumtha move aakum */
+}
+.cart-items{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+    background-color:var(--color-3);
+    text-align: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+
+}
+.slider{
+    min-height: calc(50vh - 50px) ;
+    /*calc() function total viewport la navbar oda 
+    50px ah minus panni VH adjust pannuthu */
+    background:url('../images/cover\ pic\ 2.jpg') center/cover no-repeat;
+    position: relative;
+}
+.brand-banner{
+    background-color: var(--color-6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%); /*entha 4 step use panna oru div ah center la konduvanthuralam */
+    padding: 10px;
+    text-align: center;
+}
+.brand-banner h3{
+    font-size: 70px;
+    font-family: 'Dancing Script',cursive;
+    color: var(--color-5);
+    text-shadow: 
+    2px 1px 1px var(--color-2),
+    4px 1px 2px var(--color-1);
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+    animation:1s ease-out 0s 1 slideAnimation;
+}
+.brand-banner h3:hover{
+    transform: scale(1.01);
+}
+@keyframes slideAnimation {
+    0%{transform: translateY(-100%);}
+    100%{transform:translateY(0)}
+}
+.brand-banner p{
+    font-size: 16px;
+    color: var(--color-4);
+    text-shadow: 1px 0px 1px var(--color-5);
+}
+.menu-item{
+    background-color: var(--color-2);
+    display: flex;
+    justify-content: center;
+}
+.menu-item ul{
+    list-style-type:none;
+}
+.menu-item ul li{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 80px;
+    text-align: center;
+}
+.menu-item ul li a{
+    color: white;
+    text-decoration: none;
+}
+.menu-item ul li a:hover{
+    color: var(--color-5);
+    text-decoration: none;
+}
+#txtProductType{
+    background-color: var(--color-5);
+    color: var(--color-2);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Great Vibes',cursive;
+    text-shadow: 2px 1px 1px var(--color-4);
+}
+.products-container{
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    margin-top: 20px;
+}
+.product{
+    background-color: var(--color-4);
+    box-shadow: rgba(0,0,0,0.15)1.95px 1.95px 2.6px;
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+.product:hover{
+    box-shadow: rgba(17,12,46,0.15) 0px 48px 100px 0px;
+}
+.img-container{
+    height: 200px;
+    overflow: hidden;
+}
+.product-img{
+    width: 100%;
+    height: 100%;
+
+}
+.product h3,
+.product h4 {
+    text-align: center;
+    margin-top: 5px;
+}
+.product h3{color: var(--color-5);}
+.product h4{color: var(--color-1);}
+
+.product h5{
+    margin-top: 10px;
+    color: var(--color-5);
+    background: var(--color-1);
+    padding: 5px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+}
+.product span{
+    color: var(--color-4);
+}
+.btn-item{
+    border: none;
+    padding: 12px 8px 12px 8px;
+    background-color: var(--color-3);
+    color: var(--color-4);
+    font-size: 15px;
+    position: absolute;
+    top: 0px;
+    transition: background-color 0.3s ease-in;
+}
+.btn-item:hover{
+    background-color: var(--color-1);
+}
+.btn-fav{
+    border: none;
+    background-color: transparent;
+    color: var(--color-4);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+}
+.btn-fav:hover{
+    color: var(--color-5);
+}
+.footer{
+    width: 100%;
+    background-color: var(--color-2);
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--color-4);
+}
+.footer a{
+    color: var(--color-5);
+    text-decoration: none;
+}
